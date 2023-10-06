@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class AdiminaNumeroSecreto1 {
+
+	public static void main(String[] args) {
+	
+		Scanner scanner = new Scanner (System.in);
+
+		boolean bucle = true;
+
+		while (bucle)   {
+
+		int R = (int)Math.floor(Math.random()*100)+1;
+	
+		System.out.println("Tienes que adivinar un número secreto de 1 al 100");
+					
+		int N = scanner.nextInt();
+
+		for (int i = 0; i < 9999; i++) {	
+
+				if(N > R) {
+
+					System.out.print("Te has pasado");	} 
+				
+				else {System.out.print("Te has quedado corto");	}
+				
+				N = scanner.nextInt();
+
+				if (N == R) {  System.out.println("Has acertado, el numero es: " + R + "!");
+				
+					System.out.println("Numero de intentos: " + (i+1));
+					
+					break;	}	
+				}
+
+			System.out.println("¿Otra partida? (Yes/No): ");
+
+			String respuesta = scanner.nextLine();
+
+			respuesta = scanner.nextLine();
+			
+			if(respuesta.equals("YES") || respuesta.equals("yes")) {
+
+				bucle = true;} 
+			
+			else if (respuesta.equals("NO") || respuesta.equals("no")) {
+
+				bucle = false;
+
+				System.out.print("End Game");
+
+			}
+
+		}
+		
+	
+}
+
+}
